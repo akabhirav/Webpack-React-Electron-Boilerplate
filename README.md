@@ -1,6 +1,6 @@
-##Webpack React Electron Boilerplate
+## Webpack React Electron Boilerplate
 
-###Introduction
+### Introduction
 
 A very minimal boilerplate for creating a Desktop application with a react app.
 
@@ -10,11 +10,15 @@ Just combined information from a few sources listed below:
 
 [Developing desktop applications with Electron and React - M Ahsan](https://medium.com/@Agro/developing-desktop-applications-with-electron-and-react-40d117d97564)
 
+[How to store user data in Electron - Cameron Nokes](https://medium.com/@ccnokes/how-to-store-user-data-in-electron-3ba6bf66bc1e)
+
 and official documentation of the technologies involved(not much required though)
 
 This boilerplate is well documented and is enough to get you going on the right track to build a desktop application with electron and react.
 
-###Getting Started
+**Update 1:** If you resize the window the app remembers the size and starts in that size on restart, used apps AppData in the OS to store the preference
+
+### Getting Started
 Right now you have to run two commands to get this application started.
 1. Clone this repo
 2. run `npm install`
@@ -23,9 +27,9 @@ Right now you have to run two commands to get this application started.
 
 This should open the electron app with react app running inside it.
 
-###Missing Features(For my note)
+### Missing Features(For my note)
 1. Applications own database for storing data offline(maybe, need to decide whether needed or not)
 2. Build app for production
 
-###Issues?
+### Issues?
 Don't worry just raise an issue in github, and i'll look into it.

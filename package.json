@@ -16,6 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "electron": "^1.7.6",
+    "electron-log": "^2.2.9",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-hot-middleware": "^2.15.0"

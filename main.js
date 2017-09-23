@@ -1,13 +1,24 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
 const url = require('url');
+const AppDataStore = require('./stores/AppDataStore');
 
 /** We store browser window object in a variable so that it
  * does not get cleaned up automatically by garbage collector*/
 let mainWindow;
 
-let mainWindowConfig= {width: 800, height: 600, resizable: true, frame: true};
+/** create a new store instance for saving and getting user preferences*/
+const store = new AppDataStore({
+  configName: 'user-preferences',
+  defaults: {
+    windowBounds: {width: 800, height: 600}
+  }
+});
 
+/** get window dimensions from store*/
+let {width, height} = store.get('windowBounds');
+/** use data from store for width and height of window*/
+let mainWindowConfig = {width: width, height: height, resizable: true, frame: true};
 
 /** Configuration for Browser Window
  * @param {object} config - Takes the configuration for browser window.
@@ -30,6 +41,12 @@ function createWindow(config) {
   /** Uncomment to Open Dev Tools for better development experience*/
   // mainWindow.webContents.openDevTools();
 
+  /** store data on window resize to remember dimensions on restart*/
+  mainWindow.on('resize', () => {
+    let {width, height} = mainWindow.getBounds();
+    store.set('windowBounds', {width, height})
+  });
+
   /** Set main window var to null so that cleanup happens on closing the window*/
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -37,7 +54,7 @@ function createWindow(config) {
 }
 
 /** Create window when app is ready and loaded*/
-app.on('ready', createWindow);
+app.on('ready', () => createWindow(mainWindowConfig));
 
 /** Quit the application automatically when all windows are closed*/
 app.on('window-all-closed', () => {
