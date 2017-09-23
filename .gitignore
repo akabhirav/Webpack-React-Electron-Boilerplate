@@ -1,0 +1,5 @@
+.idea/
+app/js/dist/bundle.js
+package-lock.json
+npm-debug.log
+node_modules/
