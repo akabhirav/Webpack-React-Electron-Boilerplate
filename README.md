@@ -28,7 +28,14 @@ Right now you have to run two commands to get this application started.
 This should open the electron app with react app running inside it.
 
 ### Missing Features(For my note)
-1. Applications own database for storing data offline(maybe, need to decide whether needed or not)
+1. Application's own database - Found a few alternatives for applications own database implementation
+  * [Pouch DB](https://pouchdb.com/)(JS implementation of CouchDB)
+  * [Node Postgres](https://github.com/brianc/node-postgres) (has external dependencies)
+  * [NeDb](https://github.com/louischatriot/nedb) (database which can be in-memory or persisted implements mongo api)
+  
+Note: I do not feel the need for the application to have its own database. Most of 
+     the offline storage can be taken care of using the primitive AppData store that 
+     we have. But if you want it, do tell (with upsides to doing it, use cases, etc.).
 2. Build app for production
 
 ### Issues?
