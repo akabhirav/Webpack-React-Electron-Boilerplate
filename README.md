@@ -36,6 +36,7 @@ This should open the electron app with react app running inside it.
 Note: I do not feel the need for the application to have its own database. Most of 
      the offline storage can be taken care of using the primitive AppData store that 
      we have. But if you want it, do tell (with upsides to doing it, use cases, etc.).
+     
 2. Build app for production
 
 ### Issues?

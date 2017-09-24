@@ -7,8 +7,8 @@
     "start": "./node_modules/.bin/electron .",
     "webpack": "./node_modules/.bin/webpack-dev-server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Abhirav Kumar",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
