@@ -20,10 +20,18 @@ This boilerplate is well documented and is enough to get you going on the right 
 
 ### Getting Started
 Right now you have to run two commands to get this application started.
+
 1. Clone this repo
 2. run `npm install`
+
+For Development
+
 3. run `npm run webpack`. Keep this running. **Do not Close this terminal**
 4. run `npm start` in another terminal.
+    
+For Production
+
+3. run `npm run build` to build the app for production(change the platform in npm script for a different platform)
 
 This should open the electron app with react app running inside it.
 
@@ -36,8 +44,6 @@ This should open the electron app with react app running inside it.
 Note: I do not feel the need for the application to have its own database. Most of 
      the offline storage can be taken care of using the primitive AppData store that 
      we have. But if you want it, do tell (with upsides to doing it, use cases, etc.).
-     
-2. Build app for production
 
 ### Issues?
 Don't worry just raise an issue in github, and i'll look into it.

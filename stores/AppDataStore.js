@@ -1,7 +1,6 @@
 const electron = require('electron');
 const path = require('path');
 const fs = require('fs');
-const log = require('electron-log');
 
 class AppDataStore {
   /**
@@ -46,7 +45,6 @@ function parseDataFile(filePath, defaults) {
     /** + "" just to satisfy type warnings apparently argument type buffer not assignable to parameter type string, who knew*/
     return JSON.parse(fs.readFileSync(filePath) + "");
   } catch (e) {
-    log.error('Error: ', e);
     return defaults;
   }
 }

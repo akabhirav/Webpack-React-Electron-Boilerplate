@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   /** app should have dev server if you want hot reload*/
@@ -14,13 +15,16 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/"
   },
+  /** path for bundle js*/
   devServer: {
-    contentBase: './app/js/dist',
-    publicPath: '/'
+    publicPath: path.join(__dirname, 'app/js/dist'),
+    compress: true
   },
   /** Plugin required for react hot reloading*/
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    /** Write a physical file so we don't have to rely on http for bundle js*/
+    new WriteFilePlugin()
   ],
   module: {
     loaders: [
